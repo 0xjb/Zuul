@@ -18,6 +18,8 @@ public class RoomCoord {
     public RoomCoord() {
         this(0, 0);
     }
+    
+    
 
     // x y constructor for room coordinates
     public RoomCoord(int X, int Y) {
@@ -43,5 +45,8 @@ public class RoomCoord {
     // setter for the rooms y-value
     public void setRoomY(int Y) {
         this.Y = Y;
+    }
+    public void setRoomSize( int X, int Y) {
+        
     }
 }

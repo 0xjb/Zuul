@@ -40,6 +40,8 @@ public class RoomManager {
         /* Define the exit-waypoints:
            From 'garden' Room instance. */
         garden.setExit("east", relaxing_room);
+        garden.roomcords.setRoomX(0);
+        garden.roomcords.setRoomY(0);
         garden.setExit("south", outside);
 
         /* Define the exit-waypoints:
