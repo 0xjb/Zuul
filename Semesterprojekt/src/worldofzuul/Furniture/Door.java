@@ -5,6 +5,7 @@
  */
 package worldofzuul.Furniture;
 
+import worldofzuul.People.Player;
 import worldofzuul.items.Item;
 import worldofzuul.items.Key;
 
@@ -42,7 +43,7 @@ public class Door extends Furniture {
     /**
      * method for checking if the door is locked
      */
-    public void isDoorLocked(Key key, Item items[]){
+    public boolean isDoorLocked(Key key, Item items[]){
         if (items.contains(key)) {
             System.out.println("You got the key! Door is now open Sir");
             items.remove(key);
@@ -50,6 +51,7 @@ public class Door extends Furniture {
         else {
            System.out.println("Nahh. Door is locked");
         }
+        return true;
         
     }
     
