@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package worldofzuul;
+package worldofzuul.items;
 
-import worldofzuul.items.Item;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 /**
  *
@@ -31,7 +29,7 @@ public class Inventory {
                 (currentWeight + item.getWeight() <= MAX_WEIGHT)) {
             items.add(item);
             currentWeight += item.getWeight();
-        } else if(items.size() < CAPACITY){ // checks if theres less than 10 items
+        } else if(items.size() == CAPACITY){ // checks if theres less than 10 items
             System.out.println("Not enough space");
         } else {
             System.out.println("The item is too heavy");
@@ -43,6 +41,10 @@ public class Inventory {
     public void removeItem(int index) {
         currentWeight-= items.get(index).getWeight();
         items.remove(index);     
+    }
+    
+    public ArrayList<Item> getInventory(){
+        return items;
     }
 
 }
