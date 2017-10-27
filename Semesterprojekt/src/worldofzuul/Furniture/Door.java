@@ -15,7 +15,8 @@ import worldofzuul.items.Key;
 public class Door extends Furniture {
     private boolean doorLocked;
     private Item items[];
-        private KeyHole doorhole;
+    private KeyHole keyHole;
+    
     /**
      * constructor for a door
      * @param doorName
@@ -29,8 +30,7 @@ public class Door extends Furniture {
         this.doorLocked = doorLocked;
         
     }
-    
-    Door toiletDøren = new Door("Toiletdøren", "Ikke gå herind, der lugter", true);
+
     
     /**
      * method for inspect in door
@@ -44,7 +44,7 @@ public class Door extends Furniture {
      */
     public void isDoorLocked(Key key, Item items[]){
         if (items.contains(key)) {
-            System.out.println("You got the key! Door is now locked up Sir");
+            System.out.println("You got the key! Door is now open Sir");
             items.remove(key);
         }
         else {
