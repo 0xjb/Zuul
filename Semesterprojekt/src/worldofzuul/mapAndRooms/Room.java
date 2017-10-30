@@ -17,6 +17,9 @@ public class Room {
     RoomCoord roomcords = new RoomCoord();
     // Map type (key/value -pairs data structure)
     private HashMap<String, Room> exits;
+    private int[][] roomCoordinates = new int [10][10];
+    private int x;
+    private int y;
 
     /**
      * One-arg constructor with description String.
