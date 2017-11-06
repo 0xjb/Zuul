@@ -2,6 +2,7 @@ package worldofzuul.items;
 
 import worldofzuul.Entity;
 import worldofzuul.People.Player;
+import worldofzuul.mapAndRooms.Room;
 
 /**
  * Item class - the class used to instantiate an item in the game
@@ -12,6 +13,7 @@ public abstract class Item extends Entity {
     private String itemName;
     private String itemDescription;
     private int weight;
+    private Room currentRoom;
     int x;
     int y;
     /**
