@@ -64,6 +64,9 @@ public class Player extends Person {
     public void setCurrentRoom(Room room) {
         this.currentRoom = room;
     }
+    public Room getCurrentRoom(){
+        return currentRoom;
+    }
 
     /**
      * getter for the current energy level
