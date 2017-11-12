@@ -26,9 +26,7 @@ public class ZuulGUI extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        root.getChildrenUnmodifiable().add(new Canvas(640,640));
         Scene scene = new Scene(root);
-
         stage.setScene(scene);
         stage.show();
     }
