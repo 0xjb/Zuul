@@ -18,7 +18,7 @@ public class StartGame {
         // Game instantiation
         Game game = new Game();
         // Call play method
-        game.start();
+        
         
     }
 }

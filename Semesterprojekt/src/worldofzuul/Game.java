@@ -40,6 +40,7 @@ public class Game implements Runnable {
         student = new Student(5,5,5, rooms.getCurrentRoom(), 3);
         student.place();
         player = new Player("Johammed",14,0,0,rooms.getCurrentRoom());
+        player.spawnPlayer();
     }
     
     public void tick() {
@@ -130,6 +131,9 @@ public class Game implements Runnable {
         
         // Quit message
         System.out.println("Thank you for playing.  Good bye.");
+    }
+    public Player getPlayer() {
+        return this.player;
     }
     
     public RoomManager getRoomManager() {
