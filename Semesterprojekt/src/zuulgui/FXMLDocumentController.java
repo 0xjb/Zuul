@@ -24,6 +24,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import worldofzuul.Game;
+import worldofzuul.items.Item;
 import worldofzuul.userCommand.Command;
 import worldofzuul.userCommand.CommandWord;
 
@@ -75,6 +76,7 @@ public class FXMLDocumentController implements Initializable {
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 // draw room 60 times per second
+                c.getGraphicsContext2D().clearRect(0, 0, 640, 640); // good guy rasmus
                 drawImages(gc);
             }
         }.start();
@@ -95,18 +97,28 @@ public class FXMLDocumentController implements Initializable {
     public void drawImages(GraphicsContext gc) {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                Image image = new Image(choosePic(i, j));
-                gc.drawImage(image, X * j, Y * i);
+                // render floor
+                Image tile = new Image("testSquare.png");
+                gc.drawImage(tile, X * j, Y * i);
+                // render entities
+                if(g.getRoomManager().getCurrentRoom().roomArray[i][j] != null) {
+                    Image entity = new Image(choosePic(i,j));
+                    gc.drawImage(entity, X * j , Y * i );
+                }
             }
         }
 
     }
 
     public String choosePic(int row, int col) {
+        // magic
+
         if (g.getRoomManager().getCurrentRoom().roomArray[row][col] == null) {
+            return "testSquare.png";
+        } else if(g.getRoomManager().getCurrentRoom().roomArray[row][col] instanceof Item) {
             return "500.png";
         } else {
-            return "test69.png";
+            return "boi.png";
         }
     }
 
